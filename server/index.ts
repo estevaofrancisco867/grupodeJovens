@@ -54,7 +54,14 @@ app.use((req, res, next) => {
   }
 
   const port = 5000;
-  server.listen(port, () => {
-    log(`serving on port ${port}`);
-  });
+
+  server.listen(
+    {
+      port,
+      host: "0.0.0.0", // escuta em todas interfaces, mas sem reusePort
+    },
+    () => {
+      log(`serving on port ${port}`);
+    }
+  );
 })();

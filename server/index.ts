@@ -1,4 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
+import http from "http";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
@@ -37,7 +38,7 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const server = await registerRoutes(app);
+  await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -48,17 +49,16 @@ app.use((req, res, next) => {
   });
 
   if (app.get("env") === "development") {
-    await setupVite(app, server);
+    await setupVite(app);
   } else {
     serveStatic(app);
   }
 
-  const port = 5000;
-  server.listen({
-    port,
-    host: "127.0.0.1", // Alterado para evitar erro ENOTSUP
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  // Criar o servidor HTTP
+  const server = http.createServer(app);
+
+  // Agora listen apenas no localhost 127.0.0.1 para evitar ENOTSUP
+  server.listen(5000, "127.0.0.1", () => {
+    log(`serving on port 5000`);
   });
 })();

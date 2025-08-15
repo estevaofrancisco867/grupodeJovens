@@ -38,6 +38,8 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  const server = http.createServer(app);
+
   await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -49,16 +51,16 @@ app.use((req, res, next) => {
   });
 
   if (app.get("env") === "development") {
-    await setupVite(app);
+    await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // Criar o servidor HTTP
-  const server = http.createServer(app);
+  // Escuta no localhost, porta 5000, sem reusePort para evitar erro no Windows
+  const port = 5000;
+  const host = "127.0.0.1";
 
-  // Agora listen apenas no localhost 127.0.0.1 para evitar ENOTSUP
-  server.listen(5000, "127.0.0.1", () => {
-    log(`serving on port 5000`);
+  server.listen(port, host, () => {
+    log(`serving on http://${host}:${port}`);
   });
 })();

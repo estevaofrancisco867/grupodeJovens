@@ -7,9 +7,9 @@
       "config": { "includeFiles": ["dist/**", "client/**"] }
     },
     {
-      "src": "vite.config.ts",
+      "src": "package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "config": { "distDir": "dist/public" }
     }
   ],
   "routes": [
@@ -19,7 +19,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/$1"
+      "dest": "/dist/public/$1"
     }
   ]
 }

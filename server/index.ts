@@ -54,14 +54,11 @@ app.use((req, res, next) => {
   }
 
   const port = 5000;
-
-  server.listen(
-    {
-      port,
-      host: "0.0.0.0", // escuta em todas interfaces, mas sem reusePort
-    },
-    () => {
-      log(`serving on port ${port}`);
-    }
-  );
+  server.listen({
+    port,
+    host: "127.0.0.1", // Alterado para evitar erro ENOTSUP
+    reusePort: true,
+  }, () => {
+    log(`serving on port ${port}`);
+  });
 })();

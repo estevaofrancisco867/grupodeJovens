@@ -4,12 +4,16 @@
     {
       "src": "server/index.ts",
       "use": "@vercel/node",
-      "config": { "includeFiles": ["dist/**", "client/**"] }
+      "config": {
+        "includeFiles": ["dist/**", "client/**"]
+      }
     },
     {
-      "src": "package.json",
+      "src": "vite.config.ts",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist/public" }
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
@@ -19,7 +23,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/public/$1"
+      "dest": "/dist/$1"
     }
   ]
 }

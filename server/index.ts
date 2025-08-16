@@ -1,65 +1,62 @@
-import express, { type Request, Response, NextFunction } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import http from "http";
+import path from "path";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { log } from "./vite"; // Se você tiver uma função de log própria
 
 const app = express();
+
+// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Logger simplificado (opcional)
 app.use((req, res, next) => {
   const start = Date.now();
-  const path = req.path;
-  let capturedJsonResponse: Record<string, any> | undefined = undefined;
-
-  const originalResJson = res.json;
-  res.json = function (bodyJson, ...args) {
-    capturedJsonResponse = bodyJson;
-    return originalResJson.apply(res, [bodyJson, ...args]);
-  };
-
   res.on("finish", () => {
     const duration = Date.now() - start;
-    if (path.startsWith("/api")) {
-      let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
-      if (capturedJsonResponse) {
-        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
-      }
-
-      if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
-      }
-
-      log(logLine);
-    }
+    console.log(`${req.method} ${req.originalUrl} ${res.statusCode} - ${duration}ms`);
   });
-
   next();
 });
 
-(async () => {
-  const server = http.createServer(app);
+// Rotas da API
+await registerRoutes(app);
 
-  await registerRoutes(app);
+// Tratamento de erros (opcional)
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+  const status = err.status || 500;
+  res.status(status).json({ message: err.message || "Erro interno" });
+});
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
+// Produção: servir frontend (Vite build)
+if (process.env.NODE_ENV === "production") {
+  const distPath = path.resolve("dist");
 
-    res.status(status).json({ message });
-    throw err;
+  // Servir arquivos estáticos (index.html, assets, etc.)
+  app.use(express.static(distPath));
+
+  // Redirecionar tudo que não for API para o index.html
+  app.get("*", (_req, res) => {
+    res.sendFile(path.join(distPath, "index.html"));
+  });
+} else {
+  // Ambiente de desenvolvimento com Vite (apenas local)
+  const { createServer } = await import("vite");
+  const vite = await createServer({
+    server: { middlewareMode: true },
+    root: path.resolve("client"),
   });
 
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
+  app.use(vite.middlewares);
+}
 
-  const port = process.env.PORT || 3000;
-  const host = "0.0.0.0";
+// Criar servidor HTTP (necessário para Vite em dev)
+const server = http.createServer(app);
 
-  server.listen(port, host, () => {
-    log(`Servidor rodando em http://${host}:${port}`);
-  });
-})();
+// Ouvir em todas as interfaces (necessário no Render)
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Servidor ouvindo em http://localhost:${PORT}`);
+});

@@ -56,11 +56,10 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Escuta no localhost, porta 5000, sem reusePort para evitar erro no Windows
-  const port = 5000;
-  const host = "127.0.0.1";
+  const port = process.env.PORT || 3000;
+  const host = "0.0.0.0";
 
   server.listen(port, host, () => {
-    log(`serving on http://${host}:${port}`);
+    log(`Servidor rodando em http://${host}:${port}`);
   });
 })();

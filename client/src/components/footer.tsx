@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-blue-400 mt-8 pt-8 text-center">
           <p className="text-blue-100">
-            &copy; 2024 KERIGMA - Grupo de Jovens. Todos os direitos reservados.
+            &copy; 2025 KERIGMA - Grupo de Jovens. Todos os direitos reservados.
           </p>
         </div>
       </div>

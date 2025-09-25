@@ -30,27 +30,26 @@
       h2 {
         font-family: "Georgia", serif;
       }
-      figure.story-image {
-        margin: 2.5rem auto;
-        text-align: center;
-        max-width: 480px;
-        background-color: #ffffff;
-        padding: 0.75rem;
-        border: 1px solid #e5e7eb;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      }
+     figure.story-image {
+          margin: 2.5rem auto;
+          text-align: center;
+          max-width: 480px;
+          background-color: #ffffff;
+          padding: 0.75rem;
+          border: 1px solid #e5e7eb;
+          border-radius: 0.5rem;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+          /* Removemos qualquer altura fixa */
+        }
 
       figure.story-image img {
         border-radius: 0.35rem;
         width: 100%;
-        height: 320px;
-        object-fit: cover;
+        height: auto; /* Faz a imagem manter a proporção original */
         display: block;
+        object-fit: contain; /* Garante que nada seja cortado ou distorcido */
         image-rendering: auto;
       }
-
-
 
 
       figure.story-image figcaption {

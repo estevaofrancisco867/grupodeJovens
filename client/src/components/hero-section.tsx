@@ -136,7 +136,7 @@ export default function HeroSection() {
             </button>
 
             <a
-              href="http://paroquiasaorafaelibipora.com.br/index.php/santa-missa/"
+              href="https://arquidioceselondrina.com.br/tag/paroquia-sao-rafael/"
               target="_blank"
               rel="noopener noreferrer"
             >

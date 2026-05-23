@@ -11,6 +11,7 @@ import LocalizacaoSection from "@/components/localizacao-section";
 import ContatosSection from "@/components/contatos-section";
 import RedesSociaisSection from "@/components/redes-sociais-section";
 import Footer from "@/components/footer";
+import Videos from "@/components/videos";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <ExperienciasSection />
       <RelatosSection />
       <FormularioSection />
+      <Videos />
       <OrganizadorSection />
       <HorariosSection />
       <LocalizacaoSection />

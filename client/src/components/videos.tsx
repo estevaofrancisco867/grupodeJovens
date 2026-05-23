@@ -4,7 +4,7 @@ export default function VideosSection() {
   const videos = [
     {
       title: "O sétimo mandamento",
-      description: "Conheça a verdadeira luz do mundo.",
+      description: "Conheça o que é o adultério para igreja.",
       embedUrl: "https://www.youtube.com/embed/kvvQFhsk-ak",
     },
     {

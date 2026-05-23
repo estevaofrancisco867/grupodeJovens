@@ -3,13 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function VideosSection() {
   const videos = [
     {
-      title: "Vídeo Institucional",
-      description: "Conheça mais sobre nosso trabalho e missão.",
+      title: "O sétimo mandamento",
+      description: "Conheça a verdadeira luz do mundo.",
       embedUrl: "https://www.youtube.com/embed/kvvQFhsk-ak",
     },
     {
       title: "Mensagem Especial",
-      description: "Assista ao conteúdo preparado para você.",
+      description: " A declaração de Jesus Cristo no livro de João",
       embedUrl: "https://www.youtube.com/embed/PuTjzlNZ34Y",
     },
   ];

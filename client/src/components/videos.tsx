@@ -15,7 +15,7 @@ export default function VideosSection() {
   ];
 
   return (
-    <section className="py-20 bg-white-50">
+    <section className="py-20 bg-white-50" id = "videos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título */}
         <div className="text-center mb-14">

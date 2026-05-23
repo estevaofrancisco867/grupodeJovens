@@ -114,7 +114,7 @@ export default function Navigation() {
                 onClick={() => scrollToSection('videos')}
                 className="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-lg font-medium w-full text-left"
               >
-                Organizador
+                Videos
               </button>
             </div>
           </div>

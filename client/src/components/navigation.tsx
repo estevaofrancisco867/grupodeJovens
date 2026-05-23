@@ -55,6 +55,12 @@ export default function Navigation() {
               >
                 Organizador
               </button>
+                     <button
+                onClick={() => scrollToSection('videos')}
+                className="text-gray-700 hover:text-primary transition-colors px-3 py-2 rounded-md text-base font-medium"
+              >
+                Vídeos
+              </button>
             </div>
           </div>
 

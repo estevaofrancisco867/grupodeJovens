@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vídeos da Paróquia</title>
+  <title>Mais Vídeos</title>
 
   <style>
     * {
@@ -23,13 +23,13 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: auto;
     }
 
     .titulo {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 55px;
     }
 
     .titulo h2 {
@@ -42,18 +42,18 @@
       height: 4px;
       background: #2563eb;
       margin: auto;
-      border-radius: 10px;
+      border-radius: 999px;
     }
 
     .titulo p {
-      color: #6b7280;
       margin-top: 18px;
+      color: #6b7280;
       font-size: 1.1rem;
     }
 
     .videos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
       gap: 35px;
     }
 
@@ -61,16 +61,16 @@
       background: white;
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
       transition: .3s;
     }
 
     .video-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.12);
+      box-shadow: 0 18px 35px rgba(0,0,0,.12);
     }
 
-    .video-card iframe {
+    iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
       border: none;
@@ -83,28 +83,12 @@
     .conteudo h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
+      color: #1f2937;
     }
 
     .conteudo p {
       color: #6b7280;
       line-height: 1.6;
-    }
-
-    .ver-mais {
-      text-align: center;
-      margin-top: 45px;
-    }
-
-    .ver-mais a {
-      text-decoration: none;
-      color: #2563eb;
-      font-size: 1.4rem;
-      font-weight: 600;
-      transition: .3s;
-    }
-
-    .ver-mais a:hover {
-      opacity: .8;
     }
 
     @media (max-width: 600px) {
@@ -121,60 +105,68 @@
 
 <body>
 
-<section id="videos">
+<section>
   <div class="container">
 
     <div class="titulo">
-      <h2>Nossos Vídeos</h2>
+      <h2>Mais Vídeos</h2>
       <div class="linha"></div>
 
       <p>
-        Assista aos vídeos e acompanhe conteúdos especiais da Paróquia.
+        Assista aos conteúdos especiais e acompanhe mais mensagens da Paróquia.
       </p>
     </div>
 
     <div class="videos-grid">
 
-      <!-- vídeo 1 -->
       <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/kvvQFhsk-ak"
-          title="O sétimo mandamento"
-          allowfullscreen>
-        </iframe>
-
+        <iframe src="https://www.youtube.com/embed/kvvQFhsk-ak"></iframe>
         <div class="conteudo">
-          <h3>O sétimo mandamento</h3>
-
-          <p>
-            Conheça o que é o adultério para igreja.
-          </p>
+          <h3>Título do vídeo</h3>
+          <p>Descrição do vídeo.</p>
         </div>
       </div>
 
-      <!-- vídeo 2 -->
       <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/PuTjzlNZ34Y"
-          title="Mensagem Especial"
-          allowfullscreen>
-        </iframe>
-
+        <iframe src="https://www.youtube.com/embed/PuTjzlNZ34Y"></iframe>
         <div class="conteudo">
-          <h3>Mensagem Especial</h3>
-
-          <p>
-            A declaração de Jesus Cristo no livro de João.
-          </p>
+          <h3>Título do vídeo</h3>
+          <p>Descrição do vídeo.</p>
         </div>
       </div>
 
-    </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/kvvQFhsk-ak"></iframe>
+        <div class="conteudo">
+          <h3>Título do vídeo</h3>
+          <p>Descrição do vídeo.</p>
+        </div>
+      </div>
 
-    <div class="ver-mais">
-      <a href="https://www.youtube.com/" target="_blank">
-        Ver mais vídeos →
-      </a>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/PuTjzlNZ34Y"></iframe>
+        <div class="conteudo">
+          <h3>Título do vídeo</h3>
+          <p>Descrição do vídeo.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/kvvQFhsk-ak"></iframe>
+        <div class="conteudo">
+          <h3>Título do vídeo</h3>
+          <p>Descrição do vídeo.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/PuTjzlNZ34Y"></iframe>
+        <div class="conteudo">
+          <h3>Título do vídeo</h3>
+          <p>Descrição do vídeo.</p>
+        </div>
+      </div>
+
     </div>
 
   </div>

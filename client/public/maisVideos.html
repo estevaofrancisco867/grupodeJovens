@@ -61,13 +61,13 @@
       background: white;
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
       transition: .3s;
     }
 
     .video-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 18px 35px rgba(0,0,0,.12);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, .12);
     }
 
     iframe {
@@ -81,13 +81,24 @@
     }
 
     .conteudo h3 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 10px;
+      color: #1f2937;
     }
 
     .conteudo p {
       color: #6b7280;
       line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .titulo h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -108,28 +119,46 @@
 
     <div class="videos-grid">
 
-      <!-- original -->
+      <!-- vídeo 1 -->
       <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/kvvQFhsk-ak"></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/kvvQFhsk-ak"
+          title="O sétimo mandamento"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+
         <div class="conteudo">
           <h3>O sétimo mandamento</h3>
           <p>Conheça o que é o adultério para igreja.</p>
         </div>
       </div>
 
-      <!-- original -->
+      <!-- vídeo 2 -->
       <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/PuTjzlNZ34Y"></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/PuTjzlNZ34Y"
+          title="Mensagem Especial"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+
         <div class="conteudo">
           <h3>Mensagem Especial</h3>
           <p>A declaração de Jesus Cristo no livro de João.</p>
         </div>
       </div>
 
-      <!-- vídeo novo -->
+      <!-- vídeo 3 -->
       <div class="video-card">
         <iframe
-          src="https://www.youtube.com/embed/_qRt8XBcsbM">
+          src="https://www.youtube.com/embed/_qRt8XBcsbM"
+          title="Vídeo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
         </iframe>
 
         <div class="conteudo">
@@ -138,10 +167,14 @@
         </div>
       </div>
 
-      <!-- shorts -->
+      <!-- vídeo 4 shorts -->
       <div class="video-card">
         <iframe
-          src="https://www.youtube.com/embed/ER2y_iOK2N4">
+          src="https://www.youtube.com/embed/ER2y_iOK2N4"
+          title="Short"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
         </iframe>
 
         <div class="conteudo">
@@ -150,10 +183,14 @@
         </div>
       </div>
 
-      <!-- vídeo novo -->
+      <!-- vídeo 5 -->
       <div class="video-card">
         <iframe
-          src="https://www.youtube.com/embed/3ErYxfGPdcE">
+          src="https://www.youtube.com/embed/3ErYxfGPdcE"
+          title="Vídeo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
         </iframe>
 
         <div class="conteudo">
@@ -162,9 +199,15 @@
         </div>
       </div>
 
-      <!-- exemplo extra -->
+      <!-- vídeo 6 -->
       <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/kvvQFhsk-ak"></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/kvvQFhsk-ak"
+          title="Vídeo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
 
         <div class="conteudo">
           <h3>Título do vídeo</h3>

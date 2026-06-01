@@ -9,20 +9,22 @@ export default function VideosSection() {
     },
     {
       title: "Mensagem Especial",
-      description: " A declaração de Jesus Cristo no livro de João",
+      description: "A declaração de Jesus Cristo no livro de João",
       embedUrl: "https://www.youtube.com/embed/PuTjzlNZ34Y",
     },
   ];
 
   return (
-    <section className="py-20 bg-white-50" id = "videos">
+    <section className="py-20 bg-white-50" id="videos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título */}
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Nossos Vídeos
           </h2>
+
           <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
             Assista aos vídeos e acompanhe conteúdos especiais da Paróquia.
           </p>
@@ -56,6 +58,18 @@ export default function VideosSection() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Link Ver mais */}
+        <div className="mt-10 text-center">
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200 underline underline-offset-4"
+          >
+            Ver mais
+          </a>
         </div>
       </div>
     </section>

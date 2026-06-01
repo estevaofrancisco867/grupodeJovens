@@ -62,15 +62,16 @@ export default function VideosSection() {
 
         {/* Ver mais */}
  {/* Ver mais */}
+
 <div className="mt-12 text-center">
   <a
     href="https://www.youtube.com/"
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 text-base font-semibold text-primary hover:text-primary/80 transition-colors duration-300"
+    className="inline-flex items-center gap-2 text-xl font-semibold text-primary hover:text-primary/80 transition-colors duration-300"
   >
     Ver mais vídeos
-    <span className="text-lg">→</span>
+    <span className="text-2xl">→</span>
   </a>
 </div>
       </div>

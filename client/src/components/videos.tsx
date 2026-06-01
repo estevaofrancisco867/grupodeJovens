@@ -30,7 +30,7 @@ export default function VideosSection() {
           </p>
         </div>
 
-        {/* Grid de vídeos */}
+        {/* Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {videos.map((video, index) => (
             <Card
@@ -60,15 +60,15 @@ export default function VideosSection() {
           ))}
         </div>
 
-        {/* Link Ver mais */}
-        <div className="mt-10 text-center">
+        {/* Ver mais */}
+        <div className="mt-12 text-center">
           <a
             href="https://www.youtube.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200 underline underline-offset-4"
+            className="inline-block px-6 py-2 rounded-full border border-gray-300 text-gray-700 font-medium hover:border-primary hover:text-primary transition-all duration-300"
           >
-            Ver mais
+            Ver mais vídeos
           </a>
         </div>
       </div>

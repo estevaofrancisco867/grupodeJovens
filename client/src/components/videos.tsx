@@ -61,16 +61,18 @@ export default function VideosSection() {
         </div>
 
         {/* Ver mais */}
-        <div className="mt-12 text-center">
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-2 rounded-full border border-gray-300 text-gray-700 font-medium hover:border-primary hover:text-primary transition-all duration-300"
-          >
-            Ver mais vídeos
-          </a>
-        </div>
+ {/* Ver mais */}
+<div className="mt-12 text-center">
+  <a
+    href="https://www.youtube.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 text-base font-semibold text-primary hover:text-primary/80 transition-colors duration-300"
+  >
+    Ver mais vídeos
+    <span className="text-lg">→</span>
+  </a>
+</div>
       </div>
     </section>
   );

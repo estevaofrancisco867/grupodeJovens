@@ -91,6 +91,38 @@
       line-height: 1.6;
     }
 
+    /* Botão voltar */
+    .voltar-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+    }
+
+    .btn-voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 35px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 999px;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .btn-voltar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.35);
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    }
+
+    .btn-voltar:active {
+      transform: translateY(0);
+    }
+
     @media (max-width: 700px) {
       .videos-grid {
         grid-template-columns: 1fr;
@@ -98,6 +130,12 @@
 
       .titulo h2 {
         font-size: 2rem;
+      }
+
+      .btn-voltar {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
       }
     }
   </style>
@@ -125,13 +163,12 @@
           src="https://www.youtube.com/embed/5Qrhau7txIE"
           title="O sétimo mandamento"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
 
         <div class="conteudo">
           <h3>O sétimo mandamento</h3>
-          <p>Conheça o que é o adultério para igreja.</p>
+          <p>Conheça o que é o adultério para a Igreja.</p>
         </div>
       </div>
 
@@ -141,7 +178,6 @@
           src="https://www.youtube.com/embed/BkHdtooYi6g"
           title="Mensagem Especial"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
 
@@ -157,7 +193,6 @@
           src="https://www.youtube.com/embed/_qRt8XBcsbM"
           title="Vídeo"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
 
@@ -167,13 +202,12 @@
         </div>
       </div>
 
-      <!-- vídeo 4 shorts -->
+      <!-- vídeo 4 -->
       <div class="video-card">
         <iframe
           src="https://www.youtube.com/embed/ER2y_iOK2N4"
           title="Short"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
 
@@ -189,7 +223,6 @@
           src="https://www.youtube.com/embed/3ErYxfGPdcE"
           title="Vídeo"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
 
@@ -205,7 +238,6 @@
           src="https://www.youtube.com/embed/yTgBlnLiHWA"
           title="Vídeo"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
 
@@ -216,13 +248,15 @@
       </div>
 
     </div>
-      <div class="text-center mt-12">
-          <a href="/" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition transform hover:scale-105">
-            Voltar para o Início
-          </a>
-        </div>
-  </div>
 
+    <!-- Botão voltar -->
+    <div class="voltar-container">
+      <a href="/" class="btn-voltar">
+        ← Voltar para o Início
+      </a>
+    </div>
+
+  </div>
 </section>
 
 </body>

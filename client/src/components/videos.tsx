@@ -66,8 +66,6 @@ export default function VideosSection() {
 <div className="mt-12 text-center">
   <a
     href="/maisVideos.html"
-    target="_blank"
-    rel="noopener noreferrer"
     className="inline-flex items-center gap-2 text-xl font-semibold text-primary hover:text-primary/80 transition-colors duration-300"
   >
     Ver mais vídeos
